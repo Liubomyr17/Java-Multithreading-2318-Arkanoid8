@@ -1,0 +1,23 @@
+2413 Arkanoid 8
+But that is not all.
+The BaseObject class needs more methods.
+For now, these will be the empty draw (Canvas canvas) and move () methods.
+Successor classes will need to redefine them at home and implement the necessary functionality (for now, you can leave
+them empty, just so that the code compiles).
+Declare these methods, but make them abstract.
+Also abstract the BaseObject class itself.
+And we will need to determine whether the ball fell into a brick or into a stand.
+We will do it like this:
+In the same class, create a special method: boolean isIntersec (BaseObject o)
+It will determine whether the objects “crossed” or not. If crossed, return true; if not, false.
+Because We conventionally consider objects as circles, then I propose such a formula for interaction
+If the center of the circle of one object fell into the circle of another, then we assume that they collided.
+Or even simpler:
+distance_ between_objects <= max (radius_of the first_object, radius_of the second_object)
+
+Requirements:
+1. The BaseObject class must be abstract.
+2. In the BaseObject class, the abstract draw () method must be declared with one parameter of type Canvas.
+3. In the BaseObject class, the abstract move () method must be declared without parameters.
+4. In the BaseObject class, the isIntersec () method must be implemented with one parameter of the BaseObject type,
+returning true if the current object intersects with the analyzed one.
